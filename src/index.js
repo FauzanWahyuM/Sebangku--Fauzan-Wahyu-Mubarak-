@@ -26,8 +26,10 @@ import "react-datetime/css/react-datetime.css";
 import HomePage from "./pages/HomePage";
 import ScrollToTop from "./components/ScrollToTop";
 
+const baseUrl = process.env.NODE_ENV === 'production' ? '/volt-react-dashboard' : '';
+
 ReactDOM.render(
-  <HashRouter>
+  <HashRouter basename={baseUrl}>
     <ScrollToTop />
     <HomePage />
   </HashRouter>,
